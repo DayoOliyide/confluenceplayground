@@ -1,0 +1,22 @@
+
+
+#
+GET http://localhost:8082/topics
+Accept: application/vnd.kafka.v1+json, application/vnd.kafka+json, application/json 
+
+#
+POST http://localhost:8082/topics/kafka-rest-messages 
+Content-Type: application/vnd.kafka.avro.v1+json
+Accept: application/vnd.kafka.v1+json, application/vnd.kafka+json, application/json
+
+{
+  "value_schema": "{\"name\":\"first-name\",\"type\": \"string\"}"
+  "records": [
+    {
+      "first-name": "Dayo"
+    },
+    {
+      "first-name": "Luke"
+    }
+  ]
+}
